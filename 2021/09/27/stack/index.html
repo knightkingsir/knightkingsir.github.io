@@ -20,22 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="什么是数据结构?数据结构，直白地理解，就是研究数据的存储方式数据存储只有一个目的，即为了方便后期对数据的再利用，就如同我们使用数组存储 {1,2,3,4,5} 是为了后期取得它们的加和值，无缘由的数据存储行为是对存储空间的不负责任.因此，数据在计算机存储空间的存放，决不是胡乱的，这就要求我们选择一种好的方式来存储数据，而这也是数据结构的核心内容。 例如，一直以来大家面对的数据存储，都是类似存储 1">
+  <meta name="description" content="栈的定义栈，就是那些由编译器在需要的时候分配，在不需要的时候自动清除的变量的存储区。里面的变量通常是局部变量、函数参数等。什么是栈，它是你的电脑内存的一个特别区域，它用来存储被每一个function（包括main（）方法）创建的临时变量。栈是FILO，就是先进后出原则的结构体，它密切的被CPU管理和充分利用。每次function声明一个新的变量，它就会被“推”到栈中。然后每次一个function退">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构概述">
-<meta property="og:url" content="http://example.com/2021/09/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/index.html">
+<meta property="og:title" content="栈与堆">
+<meta property="og:url" content="http://example.com/2021/09/27/stack/index.html">
 <meta property="og:site_name" content="数据结构与算法">
-<meta property="og:description" content="什么是数据结构?数据结构，直白地理解，就是研究数据的存储方式数据存储只有一个目的，即为了方便后期对数据的再利用，就如同我们使用数组存储 {1,2,3,4,5} 是为了后期取得它们的加和值，无缘由的数据存储行为是对存储空间的不负责任.因此，数据在计算机存储空间的存放，决不是胡乱的，这就要求我们选择一种好的方式来存储数据，而这也是数据结构的核心内容。 例如，一直以来大家面对的数据存储，都是类似存储 1">
+<meta property="og:description" content="栈的定义栈，就是那些由编译器在需要的时候分配，在不需要的时候自动清除的变量的存储区。里面的变量通常是局部变量、函数参数等。什么是栈，它是你的电脑内存的一个特别区域，它用来存储被每一个function（包括main（）方法）创建的临时变量。栈是FILO，就是先进后出原则的结构体，它密切的被CPU管理和充分利用。每次function声明一个新的变量，它就会被“推”到栈中。然后每次一个function退">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/structure/img.png">
-<meta property="article:published_time" content="2021-09-24T01:11:28.000Z">
-<meta property="article:modified_time" content="2021-09-24T01:47:58.405Z">
+<meta property="article:published_time" content="2021-09-27T03:22:15.000Z">
+<meta property="article:modified_time" content="2021-09-27T03:48:31.600Z">
 <meta property="article:author" content="落叶深雪">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/structure/img.png">
 
-<link rel="canonical" href="http://example.com/2021/09/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/">
+<link rel="canonical" href="http://example.com/2021/09/27/stack/">
 
 
 <script id="page-configurations">
@@ -48,7 +46,7 @@
   };
 </script>
 
-  <title>数据结构概述 | 数据结构与算法</title>
+  <title>栈与堆 | 数据结构与算法</title>
   
 
 
@@ -163,7 +161,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/27/stack/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/anime.jpg">
@@ -176,7 +174,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          数据结构概述
+          栈与堆
         </h1>
 
         <div class="post-meta">
@@ -187,7 +185,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-09-24 10:11:28 / 修改时间：10:47:58" itemprop="dateCreated datePublished" datetime="2021-09-24T10:11:28+09:00">2021-09-24</time>
+              <time title="创建时间：2021-09-27 12:22:15 / 修改时间：12:48:31" itemprop="dateCreated datePublished" datetime="2021-09-27T12:22:15+09:00">2021-09-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
             </span>
 
           
@@ -201,18 +208,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构?"></a>什么是数据结构?</h2><p><strong>数据结构，直白地理解，就是研究数据的存储方式</strong><br>数据存储只有一个目的，即为了方便后期对数据的再利用，就如同我们使用数组存储 {1,2,3,4,5} 是为了后期取得它们的加和值，无缘由的数据存储行为是对存储空间的不负责任.<br>因此，数据在计算机存储空间的存放，决不是胡乱的，这就要求我们选择一种好的方式来存储数据，而这也是数据结构的核心内容。</p>
-<p>例如，一直以来大家面对的数据存储，都是类似存储 1、2、{a,b,c} 这样的问题，解决方式无疑是用变量或者数组对数据进行存储，即：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">char</span> str[<span class="number">3</span>] = &#123;<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>&#125;;</span><br></pre></td></tr></table></figure>
-<p>但是，如果要存储这样一组数据：{张亮，张平，张华，张群，张晶，张磊}，数据之间具有这样的关系：张亮是张平、张华和张群的父亲，同时张平还是张晶和张磊<br>的父亲，数据之间的关系如图 1 所示<br><img src="/images/structure/img.png" alt="structure"><br>.<center> 图1 数据及数据之间的关系 </center><br>对于存储之间具有复杂关系的数据，如果还是用变量或数组来存储（比如用数组存储 {“张亮”,”张平”,“张华”,”张群”,”张晶”,”张磊”} ），数据存储是没有问题，<br>但是无法体现数据之间的逻辑关系，后期根本无法使用，显然不明智.</p>
-<blockquote>
-<p>针对此类数据，数据结构中提供有专门的树结构来存储这类数据.<br>再比如，无论是哪款导航软件，其导航功能的实现都需要大量地图数据的支持。很明显，这些数据绝不是使用变量或数组进行存储的，那样对于数据的使用简直是个悲剧<br>针对此类数据，数据结构提供了图存储结构，专门用于存储这类数据<br>通过以上两个示例可以体会出，数据结构教会我们的绝不仅仅是如何存储 1、2、{a,b,c} 这样简单的数据，而是解决具有复杂关系的大量数据的存储问题<br>.<font color="00dddd">数据结构是一门学科，它教会我们“如何存储具有复杂关系的数据更有助于后期对数据的再利用”</font></p>
-</blockquote>
-<p>数据结构大致包含以下几种存储结构</p>
+        <h2 id="栈的定义"><a href="#栈的定义" class="headerlink" title="栈的定义"></a>栈的定义</h2><p>栈，就是那些由编译器在需要的时候分配，在不需要的时候自动清除的变量的存储区。里面的变量通常是局部变量、函数参数等。什么是栈，它是你的电脑内存的一个特别区域，它用来存储被每一个function（包括main（）方法）创建的临时变量。栈是FILO，就是先进后出原则的结构体，它密切的被CPU管理和充分利用。每次function声明一个新的变量，它就会被“推”到栈中。然后每次一个function退出时，所有关于这个函数中定义的变量都会被释放（换句话说就是删除）。一旦栈中的变量释放，这块区域就会变成可用的，提供给其他栈中的变量。  理解栈的关键是理解概念，当一个function退出时，所有它的变量都会从栈中弹出,以后都会永远消失。因此栈中的变量本质是局部的。这和我们原来理解为变量作用域或者本地或者全局变量是相关的。在C中，一个公共的bug 是从你程序中的一个function外尝试访问一个在栈中的这个function的变量（在该function已经退出后）</p>
+<h3 id="栈的优缺点"><a href="#栈的优缺点" class="headerlink" title="栈的优缺点"></a>栈的优缺点</h3><p><strong>栈的优点</strong></p>
 <ul>
-<li>线性表,可以细分为顺序表,链表，栈和数列</li>
-<li>树结构，可以细分为普通树，二叉树，线索二叉树等</li>
-<li>图存储结构</li>
+<li>我们不用自己去管理内存，变量创建和释放都是自动的。</li>
+<li>空间被CPU高效地管理着，内存不会变成碎片</li>
+<li>栈中的变量只有在函数创建运行时才存在</li>
+<li>读取速度快，而且数据可以共享</li>
+</ul>
+<hr>
+<p><strong>栈的缺点</strong></p>
+<ul>
+<li>存在于栈中的数据大小及周期必须是确定的，缺乏灵活性。</li>
+<li>受限于栈大小(取决于操作系统)</li>
+</ul>
+<hr>
+<h4 id="栈的基本操作"><a href="#栈的基本操作" class="headerlink" title="栈的基本操作"></a>栈的基本操作</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stack</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> box[SMAX];</span><br><span class="line">    <span class="keyword">int</span> top;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">create</span><span class="params">(struct <span class="built_in">stack</span> *s)</span></span>&#123;   <span class="comment">//创建一个空stack</span></span><br><span class="line">    s-&gt;top = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(struct <span class="built_in">stack</span> *s, <span class="keyword">char</span> item)</span></span>&#123;  <span class="comment">//添加item进栈中</span></span><br><span class="line">    s-&gt;box[++s-&gt;top] = item;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">(struct <span class="built_in">stack</span> *s)</span></span>&#123;  <span class="comment">//删除栈首元素</span></span><br><span class="line">    --s-&gt;top;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">empty</span><span class="params">(struct <span class="built_in">stack</span> *s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span>(s-&gt;top == <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">top</span><span class="params">(struct <span class="built_in">stack</span> *s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span>(s-&gt;box[s-&gt;top]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="堆的定义"><a href="#堆的定义" class="headerlink" title="堆的定义"></a>堆的定义</h2><p>堆也是我们的计算机内存中的一个区域，但是他不是自动管理的。而且也不是被CPU密切的管理着。它是一片更加自由的内存区域（很大）。要想在堆上创建内存，我们必须使用malloc() 或者calloc(),java中为new创建.他们都是C语言编译的。一旦你在堆上分配内存，当你不在需要的时候你必须用free()去销毁。如果你不销毁或者销毁失败，你的程序就会有内存泄露。堆只有在程序结束后才会被销毁。换句话说就是堆内存会一直在，其他进程无法使用。不像栈，堆没有变量大小的限制（除了你电脑的物理限制条件外）。堆内存读出和写入都比较慢，因为它必须使用指针图访问堆内存。</p>
+<h3 id="堆的优缺点"><a href="#堆的优缺点" class="headerlink" title="堆的优缺点"></a>堆的优缺点</h3><p><strong>堆的优点</strong></p>
+<ul>
+<li>可以动态分配内存大小，生存期也不必告诉编译器，因为它是在运行中动态分配内存的，Java的垃圾收集器会自动收走这些不在实用的数据。</li>
+<li>变量可以被全局访问</li>
+</ul>
+<p><strong>堆的缺点</strong></p>
+<ul>
+<li>访问比较慢</li>
+<li>没有高效地使用空间，随着块内存的创建和销毁，内存可能会变成碎片</li>
+<li>必须自己来管理内存(变量的创建和销毁你必须要负责)</li>
 </ul>
 
     </div>
@@ -247,13 +269,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/09/24/linerLink/" rel="prev" title="linerLink">
-      <i class="fa fa-chevron-left"></i> linerLink
+    <a href="/2021/09/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/" rel="prev" title="数据结构概述">
+      <i class="fa fa-chevron-left"></i> 数据结构概述
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/09/27/stack/" rel="next" title="栈与堆">
-      栈与堆 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -312,7 +331,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">什么是数据结构?</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">栈的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">1.1.</span> <span class="nav-text">栈的优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.1.</span> <span class="nav-text">栈的基本操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A0%86%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">堆的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A0%86%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">2.1.</span> <span class="nav-text">堆的优缺点</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
