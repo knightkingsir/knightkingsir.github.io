@@ -155,6 +155,102 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/30/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E5%92%8C%E5%A0%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/anime.jpg">
+      <meta itemprop="name" content="落叶深雪">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据结构与算法">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/30/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E5%92%8C%E5%A0%86/" class="post-title-link" itemprop="url">优先队列和堆</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-09-30 01:23:41 / 修改时间：01:41:23" itemprop="dateCreated datePublished" datetime="2021-09-30T01:23:41+09:00">2021-09-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="什么是优先队列？"><a href="#什么是优先队列？" class="headerlink" title="什么是优先队列？"></a>什么是优先队列？</h2><p>优先队列也是一种队列，只不过不同的是，优先队列的出队顺序是按照优先级来的；在有些情况下，可能需要找到元素集合中的最小或者最大元素，可以利用优先队列ADT来完成操作，优先队列ADT是一种数据结构，它支持插入和删除最小值操作（返回并删除最小元素）或删除最大值操作（返回并删除最大元素）；</p>
+<p>这些操作等价于队列的enQueue和deQueue操作，区别在于，对于优先队列，元素进入队列的顺序可能与其被操作的顺序不同，作业调度是优先队列的一个应用实例，它根据优先级的高低而不是先到先服务的方式来进行调度；</p>
+<p>如果最小键值元素拥有最高的优先级，那么这种优先队列叫作<strong>升序优先队列</strong>（即总是先删除最小的元素），类似的，如果最大键值元素拥有最高的优先级，那么这种优先队列叫作<strong>降序优先队列</strong>（即总是先删除最大的元素）；由于这两种类型时对称的，所以只需要关注其中一种，如升序优先队列；</p>
+<h3 id="优先队列ADT"><a href="#优先队列ADT" class="headerlink" title="优先队列ADT"></a>优先队列ADT</h3><p><strong>1.优先队列的主要操作</strong></p>
+<ul>
+<li>insert(key, data): 插入键值为key的数据到优先队列中，元素以其key进行排序；</li>
+<li>deleteMin/deleteMax: 删除并返回最小/最大键值的元素；</li>
+<li>getMinimum/getMaximum: 返回最小/最大键值的元素，但是并不删除它；</li>
+</ul>
+<p><strong>优先队列的辅助操作</strong></p>
+<ul>
+<li>第k最小/第k最大: 返回优先队列中键值为第k个最小/最大的元素；</li>
+<li>大小(size): 返回优先队列中的元素个数；</li>
+<li>堆排序(Heap Sort): 基于键值的优先级将优先队列中的元素进行排序；</li>
+</ul>
+<p><strong>优先队列的应用</strong></p>
+<ul>
+<li>数据压缩</li>
+<li>最短路径算法</li>
+<li>最小生成树算法</li>
+<li>事件驱动仿真</li>
+<li>选择问题</li>
+</ul>
+<hr>
+<p>实现插入删除寻找最小值无序数组复杂度为1nn, 无序链表为1nn, 有序数组为n11, 有序链表为n11, 二叉搜索树logn logn logn</p>
+<h3 id="堆和二叉堆"><a href="#堆和二叉堆" class="headerlink" title="堆和二叉堆"></a>堆和二叉堆</h3><h4 id="堆的定义"><a href="#堆的定义" class="headerlink" title="堆的定义"></a>堆的定义</h4><p>堆是一颗具有特定性质的二叉树，堆的基本要求就是堆中所有结点的值必须大于或等于（或小于或等于）其孩子结点的值，这也称为堆的性质；堆还有另一个性质，就是当 h &gt; 0 时，所有叶子结点都处于第 h 或 h - 1 层（其中 h 为树的高度，完全二叉树），也就是说，堆应该是一颗完全二叉树；<br><img src="/images/heap/heap.png" alt="heap"><br>在下面的例子中，左边的树为堆（每个元素都大于其孩子结点的值），而右边的树不是堆（因为5大于其孩子结点2）<br><img src="/images/heap/heap1.png" alt="heap"></p>
+<h4 id="二叉堆"><a href="#二叉堆" class="headerlink" title="二叉堆"></a>二叉堆</h4><p>在二叉堆中，每个结点最多有两个孩子结点，在实际应用中，二叉堆已经足够满足需求，因此接下来主要讨论二叉最小堆和二叉最大堆；</p>
+<p>堆的表示：在描述堆的操作前，首先来看堆是怎样表示的，一种可能的方法就是使用数组，因为堆在形式上是一颗完全二叉树，用数组来存储它不会浪费任何空间，例如下图：<br><img src="/images/heap/heap2.png" alt="heap"><br>用数组来表示堆不仅不会浪费空间还具有一定的优势：</p>
+<ul>
+<li>每个结点的左孩子为下标i的2倍：left child(i) = i * 2；每个结点的右孩子为下标i的2倍加1：right child(i) = i * 2 + 1</li>
+<li>每个结点的父亲结点为下标的二分之一：parent(i) = i / 2，注意这里是整数除，2和3除以2都为1，大家可以验证一下；<blockquote>
+<p>这里是把下标为0的地方空出来了的，主要是为了方便理解，如果0不空出来只需要在计算的时候把i值往右偏移一个位置就行了（也就是加1，大家可以试试，下面的演示也采取这样的方式）；</p>
+</blockquote>
+<h4 id="向堆中添加元素和Sift-Up"><a href="#向堆中添加元素和Sift-Up" class="headerlink" title="向堆中添加元素和Sift Up"></a>向堆中添加元素和Sift Up</h4>当插入一个元素到堆中时，它可能不满足堆的性质，在这种情况下，需要调整堆中元素的位置使之重新变成堆，这个过程称为堆化（heapifying）；在最大堆中，要堆化一个元素，需要找到它的父亲结点，如果不满足堆的基本性质则交换两个元素的位置，重复该过程直到每个结点都满足堆的性质为止，下面我们来模拟一下这个过程：<br>下面我们在该堆中插入一个新的元素26：<br><img src="/images/heap/heap3.png" alt="heap"><br>我们通过索引（上面的公式）可以很容易地找到新插入元素的父亲结点，然后比较它们的大小，如果新元素更大则交换两个元素的位置，这个操作就相当于把该元素上浮了一下：<br><img src="/images/heap/heap4.png" alt="heap"><br>重复该操作直到26到了一个满足堆条件的位置，此时就完成了插入的操作：<br><img src="/images/heap/heap5.png" alt="heap"><h4 id="去除堆中的最大元素和Sift-Down"><a href="#去除堆中的最大元素和Sift-Down" class="headerlink" title="去除堆中的最大元素和Sift Down"></a>去除堆中的最大元素和Sift Down</h4>这里运用到一个小技巧，就是用最后一个元素替换掉栈顶元素，然后把最后一个元素删除掉，这样一来元素的总个数也满足条件，然后只需要把栈顶元素依次往下调整就好了，这个操作就叫做Sift Down（下沉）：<br><img src="/images/heap/heap6.png" alt="heap"><br>用最后元素替换掉栈顶元素，然后删除最后一个元素：<br><img src="/images/heap/heap7.png" alt="heap"><br>然后比较其孩子结点的大小:<br><img src="/images/heap/heap8.png" alt="heap"><br>如果不满足堆的条件，那么就跟孩子结点中较大的一个交换位置：<br><img src="/images/heap/heap9.png" alt="heap"></li>
+</ul>
+<p>重复该步骤，直到16到达合适的位置</p>
+<p><img src="/images/heap/heap10.png" alt="heap"></p>
+<h4 id="replace和Heapify"><a href="#replace和Heapify" class="headerlink" title="replace和Heapify"></a>replace和Heapify</h4><p>Replace这个操作其实就是取出堆中最大的元素之后再新插入一个元素，常规的做法是取出最大元素之后，再利用上面的插入新元素的操作对堆进行Sift Up操作，但是这里有一个小技巧就是直接使用新元素替换掉堆顶元素，之后再进行Sift Down操作，这样就把两次O(logn）的操作变成了一次O(logn)：<br>Heapify翻译过来就是堆化的意思，就是将任意数组整理成堆的形状，通常的做法是遍历数组从0开始添加创建一个新的堆，但是这里存在一个小技巧就是把当前数组就看做是一个完全二叉树，然后从最后一个非叶子结点开始进行Sift Down操作就可以了，最后一个非叶子结点也很好找，就是最后一个结点的父亲结点，大家可以验证一下:<br><img src="/images/heap/heap11.png" alt="heap"><br>从22这个节点开始，依次开始Sift Down操作<br><img src="/images/heap/heap12.png" alt="heap"><br>重复该过程直到堆顶元素：<br><img src="/images/heap/heap13.png" alt="heap"><br><img src="/images/heap/heap14.png" alt="heap"><br><img src="/images/heap/heap15.png" alt="heap"><br>完成堆化操作</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/27/%E9%98%9F%E5%88%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -178,10 +274,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-09-27 13:12:07 / 修改时间：13:46:04" itemprop="dateCreated datePublished" datetime="2021-09-27T13:12:07+09:00">2021-09-27</time>
+              <time title="创建时间：2021-09-27 13:12:07" itemprop="dateCreated datePublished" datetime="2021-09-27T13:12:07+09:00">2021-09-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-30 01:23:23" itemprop="dateModified" datetime="2021-09-30T01:23:23+09:00">2021-09-30</time>
+              </span>
 
           
 
@@ -650,7 +752,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
