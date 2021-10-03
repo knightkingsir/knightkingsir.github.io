@@ -155,6 +155,147 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/04/selectionsort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/anime.jpg">
+      <meta itemprop="name" content="落叶深雪">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据结构与算法">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/04/selectionsort/" class="post-title-link" itemprop="url">selectionsort</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-10-04 00:17:36 / 修改时间：00:25:34" itemprop="dateCreated datePublished" datetime="2021-10-04T00:17:36+09:00">2021-10-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="选择算法-SelectionSorting"><a href="#选择算法-SelectionSorting" class="headerlink" title="选择算法(SelectionSorting)"></a>选择算法(SelectionSorting)</h2><p>思路: 在未排序序列中找到最小(大)的元素，存至排序序列起始位置，再取最小(大)元素依次进行排序<br>时间复杂度为O(n2)之间，空间复杂度为O(1)<br>选择排序分为以下三种类型:</p>
+<ul>
+<li>直接选择排序:每步选出最小(大)值,排在已排序记录序列最前面</li>
+<li>树形选择排序:对n个记录关键两两排序，再n/2个较小者之间相互比较，时间复杂度为O(nlogn) 空间复杂度为O(n)</li>
+<li>堆排序:时间复杂度为O(nlog2n) 空间复杂度为O(1)</li>
+</ul>
+<p>代码实现如下:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">selectionsort</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,min;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n<span class="number">-1</span>;j++)&#123;</span><br><span class="line">        min = j;</span><br><span class="line">        <span class="keyword">for</span>(i=j+<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a[min]&gt;a[i])&#123;</span><br><span class="line">                min=i;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(&amp;a[min],a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/04/bucketsort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/anime.jpg">
+      <meta itemprop="name" content="落叶深雪">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据结构与算法">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/04/bucketsort/" class="post-title-link" itemprop="url">bucketsort</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-10-04 00:01:21 / 修改时间：00:17:18" itemprop="dateCreated datePublished" datetime="2021-10-04T00:01:21+09:00">2021-10-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="bucketSorting桶排序"><a href="#bucketSorting桶排序" class="headerlink" title="bucketSorting桶排序"></a>bucketSorting桶排序</h2><p>核心思想是将数组的元素分布到多个桶当中，然后每个桶被单独排序<br>步骤:</p>
+<ul>
+<li>创建一个数组，里面是各个初始值为空的”桶/bucket”</li>
+<li>分散scatter。遍历原始数组，将每个对象放入对应桶中</li>
+<li>对每个非空桶进行排序</li>
+<li>收集gather。按顺序访问桶并将所有元素放回原始数组<h3 id="评论算法好坏"><a href="#评论算法好坏" class="headerlink" title="评论算法好坏"></a>评论算法好坏</h3>分类：排序算法</li>
+</ul>
+<p>数据结构：数组</p>
+<p>最优时间复杂度：Ω(n+k)</p>
+<p>最坏时间复杂度：O(n^2)</p>
+<p>平均时间复杂度：θ(n+k)</p>
+<p>最坏空间复杂度：O(n*k)</p>
+<h3 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a>实例分析</h3><p>假设我们有一组输入数组A {29, 25, 3, 49, 9, 37, 21, 43}. 我们需要把这些数据从小到大排列出来。这些数组里面最大的数据是49。<br>第一步，创建空桶。我们现在要做的就是设置几个桶，这些桶可以是一个桶代表一个数据，从0排到49 一共50个桶；也可以一个桶代表一组范围，比如0-9，10-19，20-29，30-39，40-49，一共5个桶。这里我们选用第二个分法。</p>
+<p>第二步，分散scatter。我们开始遍历原始数组，将每个元素放入对应的桶中。那么，0-9 的桶中有3，9；10-19 的桶中没有元素；20-29 的桶中有29，25，21；30-39 的桶中有37；40-49 的桶中则是49，43。</p>
+<p>第三步，对每个非空桶进行排序。除了10-19 桶，其余的桶都是非空的。0-9 的桶中排序后还是3再是9；20-29 的桶中排序后是21，25，29；30-39 的桶中排序后是37 因为就一个元素；40-49 的桶中排序后是43，49。</p>
+<p>第四步，收集gather。按顺序访问桶，并将所有元素放回输出数组中。先0-9 的桶，再10-19的，20-29 的，30-39的，最后是40-49 的。最终的目标数组就变成了B {3,9,21,25,29,37,43,49}.</p>
+<h4 id="流程展示图"><a href="#流程展示图" class="headerlink" title="流程展示图"></a>流程展示图</h4><p><img src="/images/bucketsort/bucket.png" alt="bucket"></p>
+<p>接下来采用队列来实现简单的桶排序算法。假设每个桶里只装一个数据。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">queue</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> box[QMAX];</span><br><span class="line">    <span class="keyword">int</span> front,rear;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(struct <span class="built_in">queue</span> *q, <span class="keyword">char</span> item)</span></span>&#123;</span><br><span class="line">    q-&gt;box[++q-&gt;rear] = item;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">create</span><span class="params">(struct <span class="built_in">queue</span> *q)</span></span>&#123;</span><br><span class="line">    q-&gt;front = <span class="number">1</span>;</span><br><span class="line">    q-&gt;rear = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">empty</span><span class="params">(struct <span class="built_in">queue</span> *q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span>(q-&gt;rear &lt; q-&gt;front);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">top</span><span class="params">(struct <span class="built_in">queue</span> *q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span>(q-&gt;box[q-&gt;front]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delete</span><span class="params">(struct <span class="built_in">queue</span> *q)</span></span>&#123;</span><br><span class="line">    ++q-&gt;front;</span><br><span class="line">&#125;</span><br><span class="line">strcut <span class="built_in">queue</span> q[m+<span class="number">1</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qprint</span><span class="params">(struct <span class="built_in">queue</span> *q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(!empty(q))&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,top(q));</span><br><span class="line">        <span class="keyword">delete</span>(q);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bucketsorted</span><span class="params">(struct <span class="built_in">queue</span> *q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        create(&amp;q[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        insert(q[a[i]],a[i]);   <span class="comment">//a为数组,一共有n个元素,例如a[1]=4，那么把a[1]这个元素放到第4个桶中</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        qprint(&amp;q[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/30/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E5%92%8C%E5%A0%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -178,10 +319,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-09-30 01:23:41 / 修改时间：01:41:23" itemprop="dateCreated datePublished" datetime="2021-09-30T01:23:41+09:00">2021-09-30</time>
+              <time title="创建时间：2021-09-30 01:23:41" itemprop="dateCreated datePublished" datetime="2021-09-30T01:23:41+09:00">2021-09-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-10-04 00:00:40" itemprop="dateModified" datetime="2021-10-04T00:00:40+09:00">2021-10-04</time>
+              </span>
 
           
 
@@ -231,7 +378,8 @@
 </ul>
 <p>重复该步骤，直到16到达合适的位置</p>
 <p><img src="/images/heap/heap10.png" alt="heap"></p>
-<h4 id="replace和Heapify"><a href="#replace和Heapify" class="headerlink" title="replace和Heapify"></a>replace和Heapify</h4><p>Replace这个操作其实就是取出堆中最大的元素之后再新插入一个元素，常规的做法是取出最大元素之后，再利用上面的插入新元素的操作对堆进行Sift Up操作，但是这里有一个小技巧就是直接使用新元素替换掉堆顶元素，之后再进行Sift Down操作，这样就把两次O(logn）的操作变成了一次O(logn)：<br>Heapify翻译过来就是堆化的意思，就是将任意数组整理成堆的形状，通常的做法是遍历数组从0开始添加创建一个新的堆，但是这里存在一个小技巧就是把当前数组就看做是一个完全二叉树，然后从最后一个非叶子结点开始进行Sift Down操作就可以了，最后一个非叶子结点也很好找，就是最后一个结点的父亲结点，大家可以验证一下:<br><img src="/images/heap/heap11.png" alt="heap"><br>从22这个节点开始，依次开始Sift Down操作<br><img src="/images/heap/heap12.png" alt="heap"><br>重复该过程直到堆顶元素：<br><img src="/images/heap/heap13.png" alt="heap"><br><img src="/images/heap/heap14.png" alt="heap"><br><img src="/images/heap/heap15.png" alt="heap"><br>完成堆化操作</p>
+<h4 id="replace和Heapify"><a href="#replace和Heapify" class="headerlink" title="replace和Heapify"></a>replace和Heapify</h4><p>Replace这个操作其实就是取出堆中最大的元素之后再新插入一个元素，常规的做法是取出最大元素之后，再利用上面的插入新元素的操作对堆进行Sift Up操作，但是这里有一个小技巧就是直接使用新元素替换掉堆顶元素，之后再进行Sift Down操作，这样就把两次O(logn）的操作变成了一次O(logn)：<br>Heapify翻译过来就是堆化的意思，就是将任意数组整理成堆的形状，通常的做法是遍历数组从0开始添加创建一个新的堆，但是这里存在一个小技巧就是把当前数组就看做是一个完全二叉树，然后从最后一个非叶子结点开始进行Sift Down操作就可以了，最后一个非叶子结点也很好找，就是最后一个结点的父亲结点，大家可以验证一下:<br><img src="/images/heap/heap11.png" alt="heap"><br>从22这个节点开始，依次开始Sift Down操作<br><img src="/images/heap/heap12.png" alt="heap"><br>重复该过程直到堆顶元素：<br><img src="/images/heap/heap13.png" alt="heap"><br><img src="/images/heap/heap14.png" alt="heap"><br><img src="/images/heap/heap15.png" alt="heap"><br>完成堆化操作<br>实现代码如下:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">heap</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> box[HMAX];</span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">create</span><span class="params">(struct heap *h)</span></span>&#123;  <span class="comment">//创建一个堆</span></span><br><span class="line">    h-&gt;size = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *u,<span class="keyword">int</span> *v)</span></span>&#123;   交换两个元素</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">    temp = *u;</span><br><span class="line">    *u = *v;</span><br><span class="line">    *v = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(struct heap *h,<span class="keyword">char</span> item)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    i = ++h-&gt;size;</span><br><span class="line">    h-&gt;box[i] = item;</span><br><span class="line">    <span class="keyword">if</span>(i&gt;<span class="number">1</span> &amp;&amp; h-&gt;box[i] &lt; h-&gt;box[i/<span class="number">2</span>])&#123;</span><br><span class="line">        swap(&amp;h-&gt;box[i],&amp;h-&gt;box[i+<span class="number">1</span>]);</span><br><span class="line">        i/=<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findmin</span><span class="params">(struct heap *h)</span></span>&#123;     <span class="comment">//找到最小值</span></span><br><span class="line">    <span class="keyword">return</span>(h-&gt;box[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delete</span><span class="params">(struct heap *h)</span></span>&#123;    <span class="comment">//删除一个元素</span></span><br><span class="line">    <span class="keyword">int</span> i,k;</span><br><span class="line">    i=<span class="number">1</span>;</span><br><span class="line">    h-&gt;box[<span class="number">1</span>] = h-&gt;box[h-&gt;size];</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">2</span>*i &lt; h-&gt;size)&#123;</span><br><span class="line">        k = <span class="number">2</span>*i;</span><br><span class="line">        <span class="keyword">if</span>(k &lt; h-&gt;size &amp;&amp; h-&gt;box[k] &gt; h-&gt;box[k+<span class="number">1</span>])&#123;  <span class="comment">//找到两个子元素中较小的那个</span></span><br><span class="line">        k++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(h-&gt;box[i] &lt; h-&gt;box[k])&#123;  <span class="comment">//子元素大于父元素，不需要交换了</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(&amp;h-&gt;box[i],&amp;h-&gt;box[k]);</span><br><span class="line">        i=k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -752,7 +900,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -765,7 +913,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
